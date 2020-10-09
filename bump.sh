@@ -14,7 +14,7 @@ fi
 sed -i 's/^version: .*/version: '$v'-{build}/' .appveyor.yml
 sed -i 's/<VersionPrefix>[^<]*<\/VersionPrefix>/<VersionPrefix>'$v'<\/VersionPrefix>/' Directory.Build.props
 sed -i 's/\(<Identity .*Version=\)"[^"]*"/\1"'$v'"/' src/VSIX/source.extension.vsixmanifest
-sed -i 's/.*ProvideBindingRedirection.*/[assembly: ProvideBindingRedirection(AssemblyName = "Npgsql", NewVersion = "'$v'.0", OldVersionLowerBound = "0.0.0.0", OldVersionUpperBound = "'$v'.0")]/' src/VSIX/Properties/AssemblyInfo.cs
+sed -i 's/.*ProvideBindingRedirection.*/[assembly: ProvideBindingRedirection(AssemblyName = "PhuongNguyen.Npgsql", NewVersion = "'$v'.0", OldVersionLowerBound = "0.0.0.0", OldVersionUpperBound = "'$v'.0")]/' src/VSIX/Properties/AssemblyInfo.cs
 
 git add .appveyor.yml
 git add Directory.Build.props
